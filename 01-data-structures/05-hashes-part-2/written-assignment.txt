@@ -1,0 +1,93 @@
+Describe three collision resolution strategies not mentioned here.
+1. 2-choice hashing: Uses 2 hash functions to calculate the table location. The object is then place in the table location that contains fewer objects
+2. Universal hashing: randomly select a hash function to calculate the table location and apply its own collision strategy
+3. coalesced hashing: Similar to separate chaining, but it links chains of nodes within the table itself
+
+Create your own collision resolution strategy and describe how it works.
+Like separate chaining but when a collision occurs, instead of creating a linked_list with colliding keys,
+creates an array at the same hash table index with all colliding new_hash items
+
+
+OUTPUT OF PRINTING THE HAS WITH OPEN ADDRESSING
+
+index: 0  |  key: Star Wars: The Phantom Menace  |  value: Number One
+load factor:0.16666666666666666
+
+index: 0  |  key: Star Wars: The Phantom Menace  |  value: Number One
+index: 3  |  key: Star Wars: Attack of the Clones  |  value: Number Two
+load factor:0.3333333333333333
+
+index: 0  |  key: Star Wars: The Phantom Menace  |  value: Number One
+index: 3  |  key: Star Wars: Attack of the Clones  |  value: Number Two
+index: 5  |  key: Star Wars: Revenge of the Sith  |  value: Number Three
+load factor:0.5
+
+index: 0  |  key: Star Wars: The Phantom Menace  |  value: Number One
+index: 3  |  key: Star Wars: Attack of the Clones  |  value: Number Two
+index: 4  |  key: Star Wars: A New Hope  |  value: Number Four
+index: 5  |  key: Star Wars: Revenge of the Sith  |  value: Number Three
+load factor:0.6666666666666666
+
+index: 0  |  key: Star Wars: The Phantom Menace  |  value: Number One
+index: 2  |  key: Star Wars: The Empire Strikes Back  |  value: Number Five
+index: 3  |  key: Star Wars: Attack of the Clones  |  value: Number Two
+index: 4  |  key: Star Wars: A New Hope  |  value: Number Four
+index: 5  |  key: Star Wars: Revenge of the Sith  |  value: Number Three
+load factor:0.8333333333333334
+
+
+
+OUTPUT OF PRINTING THE HAS WITH SEPARATE CHAINING
+
+index 0:
+Star Wars: The Phantom Menace: Number One
+load factor: 0.16666666666666666
+
+index 0:
+Star Wars: The Phantom Menace: Number One
+index 3:
+Star Wars: Attack of the Clones: Number Two
+load factor: 0.3333333333333333
+
+index 0:
+Star Wars: The Phantom Menace: Number One
+index 3:
+Star Wars: Attack of the Clones: Number Two
+index 5:
+Star Wars: Revenge of the Sith: Number Three
+load factor: 0.5
+
+index 0:
+Star Wars: The Phantom Menace: Number One
+index 3:
+Star Wars: Attack of the Clones: Number Two
+index 4:
+Star Wars: A New Hope: Number Four
+index 5:
+Star Wars: Revenge of the Sith: Number Three
+load factor: 0.6666666666666666
+
+index 2:
+Star Wars: The Empire Strikes Back: Number Five
+index 3:
+Star Wars: Attack of the Clones: Number Two
+index 4:
+Star Wars: A New Hope: Number Four
+index 6:
+Star Wars: The Phantom Menace: Number One
+index 11:
+Star Wars: Revenge of the Sith: Number Three
+load factor: 0.4166666666666667
+
+index 2:
+Star Wars: The Empire Strikes Back: Number Five
+index 3:
+Star Wars: Return of the Jedi: Number Six
+Star Wars: Attack of the Clones: Number Two
+index 4:
+Star Wars: A New Hope: Number Four
+index 6:
+Star Wars: The Phantom Menace: Number One
+index 11:
+Star Wars: Revenge of the Sith: Number Three
+load factor: 0.5

@@ -1,0 +1,3 @@
+If you double the size of the array every time a collision occurs, poor luck
+can create an exponential growth of the array size, thus resulting in poor performance
+or a crash in the program due to a lack of available memory
